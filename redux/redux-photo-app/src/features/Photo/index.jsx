@@ -7,7 +7,6 @@ import MainPage from './pages/Main';
 
 function Photo() {
     const match = useRouteMatch();
-    console.log({ match });
     return (
         <Switch>
             <Route exact path={match.url} component={MainPage} />
