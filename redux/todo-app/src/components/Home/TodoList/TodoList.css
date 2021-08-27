@@ -1,0 +1,10 @@
+ul.todo-list {
+}
+
+ul.todo-list > li {
+    transition: all 0.3s ease 0.3s;
+}
+
+ul.todo-list > li.active {
+    color: palevioletred;
+}

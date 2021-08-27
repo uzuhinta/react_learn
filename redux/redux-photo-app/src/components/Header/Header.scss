@@ -1,0 +1,18 @@
+.header {
+    padding: 1rem 0;
+    font-size: 1, 25rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    
+    &__link {
+        text-decoration: none;
+        transition: all 0.3s ease;
+        &--active,
+        &:hover {
+            color: var(--bs-blue);
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+    }
+}
