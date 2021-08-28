@@ -10,18 +10,18 @@ InputField.propTypes = {
   type: PropTypes.string,
   label: PropTypes.string,
   placeholder: PropTypes.string,
-  disable: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 InputField.defaultProps = {
   type: 'text',
   label: '',
   placeholder: '',
-  disable: false,
+  disabled: false,
 };
 
 function InputField(props) {
-  const { form, field, type, label, placeholder, disable } = props;
+  const { form, field, type, label, placeholder, disabled } = props;
   const { name, value, onChange, onBlur } = field;
   const { errors, touched } = form;
   const showError = errors[name] && touched[name];
@@ -33,8 +33,9 @@ function InputField(props) {
         name={name}
         onChange={onChange}
         onBlur={onBlur}
+        value={value}
         placeholder={placeholder}
-        disable={disable}
+        disabled={disabled}
         invalid={showError}
       />
       <ErrorMessage name={name} component={FormFeedback} />

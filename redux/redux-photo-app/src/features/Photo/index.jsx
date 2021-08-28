@@ -1,8 +1,7 @@
 import NotFound from 'components/NotFound';
 import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
-import AddPage from './pages/Add';
-import EditPage from './pages/Edit';
+import AddEditPage from './pages/AddEdit';
 import MainPage from './pages/Main';
 
 function Photo() {
@@ -10,8 +9,8 @@ function Photo() {
     return (
         <Switch>
             <Route exact path={match.url} component={MainPage} />
-            <Route path={`${match.url}/add`} component={AddPage} />
-            <Route path={`${match.url}/:photoId`} component={EditPage} />
+            <Route path={`${match.url}/add`} component={AddEditPage} />
+            <Route path={`${match.url}/:photoId`} component={AddEditPage} />
             <Route component={NotFound} />
         </Switch>
     );

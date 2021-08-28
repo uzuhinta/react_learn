@@ -10,19 +10,19 @@ SelectField.propTypes = {
 
   label: PropTypes.string,
   placeholder: PropTypes.string,
-  disable: PropTypes.bool,
+  disabled: PropTypes.bool,
   options: PropTypes.array,
 };
 
 SelectField.defaultProps = {
   label: '',
   placeholder: '',
-  disable: false,
+  disabled: false,
   options: [],
 };
 
 function SelectField(props) {
-  const { form, field, label, placeholder, disable, options } = props;
+  const { form, field, label, placeholder, disabled, options } = props;
   const { name, value, onChange, onBlur } = field;
   const { errors, touched } = form;
 
@@ -53,6 +53,7 @@ function SelectField(props) {
         onBlur={onBlur}
         placeholder={placeholder}
         options={options}
+        disabled={disabled}
         className={showError ? 'is-invalid' : ''}
       />
       <ErrorMessage name={name} component={FormFeedback} />

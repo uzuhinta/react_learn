@@ -33,6 +33,8 @@ src
 |  |__images
 |  |__styles (global styles)
 |__components (shared component)
+|__app
+   |__store.js
 |__constant
    |__global.js
    |__images.js

@@ -6,7 +6,7 @@ import { Button } from 'reactstrap';
 RandomPhoto.propTypes = {
   name: PropTypes.string,
   imageUrl: PropTypes.string,
-  showError: PropTypes.string,
+  showError: PropTypes.bool,
   onImageUrlChange: PropTypes.func,
   onRandomButtonBlur: PropTypes.func,
 };
@@ -14,7 +14,7 @@ RandomPhoto.propTypes = {
 RandomPhoto.defaultProps = {
   name: '',
   imageUrl: '',
-  showError: '',
+  showError: false,
   onImageUrlChange: null,
   onRandomButtonBlur: null,
 };
