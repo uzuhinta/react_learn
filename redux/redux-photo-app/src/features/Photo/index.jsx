@@ -5,15 +5,15 @@ import AddEditPage from './pages/AddEdit';
 import MainPage from './pages/Main';
 
 function Photo() {
-    const match = useRouteMatch();
-    return (
-        <Switch>
-            <Route exact path={match.url} component={MainPage} />
-            <Route path={`${match.url}/add`} component={AddEditPage} />
-            <Route path={`${match.url}/:photoId`} component={AddEditPage} />
-            <Route component={NotFound} />
-        </Switch>
-    );
+  const match = useRouteMatch();
+  return (
+    <Switch>
+      <Route exact path={match.url} component={NotFound} />
+      <Route exact path={`${match.url}/add`} component={NotFound} />
+      <Route exact path={`${match.url}/:photoId`} component={NotFound} />
+      <Route component={NotFound} />
+    </Switch>
+  );
 }
 
 export default Photo;

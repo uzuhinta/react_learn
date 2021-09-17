@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
+import 'assets/styles/styles.scss';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
