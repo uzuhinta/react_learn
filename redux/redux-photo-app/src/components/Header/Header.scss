@@ -10,6 +10,9 @@
         &:hover {
             color: var(--bs-blue);
         }
+        &--cursor {
+            cursor: pointer;
+        }
     }
 
     &__title {

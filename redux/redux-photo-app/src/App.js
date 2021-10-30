@@ -5,6 +5,8 @@ import './App.css';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
 import firebase from 'firebase';
+import { login } from 'features/Auth/authSlice';
+import { useDispatch } from 'react-redux';
 
 const Photo = React.lazy(() => import('./features/Photo'));
 
@@ -15,6 +17,7 @@ const config = {
 firebase.initializeApp(config);
 
 function App() {
+  const dispatch = useDispatch();
   useEffect(() => {
     const unregisterAuthObserver = firebase
       .auth()
@@ -23,7 +26,9 @@ function App() {
           // do something user logs out
           return;
         }
+
         console.log('user login', user);
+        dispatch(login(user.displayName));
       });
     return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
   }, []);

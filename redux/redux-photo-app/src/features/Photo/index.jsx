@@ -8,9 +8,9 @@ function Photo() {
   const match = useRouteMatch();
   return (
     <Switch>
-      <Route exact path={match.url} component={NotFound} />
-      <Route exact path={`${match.url}/add`} component={NotFound} />
-      <Route exact path={`${match.url}/:photoId`} component={NotFound} />
+      <Route exact path={match.url} component={MainPage} />
+      <Route exact path={`${match.url}/add`} component={AddEditPage} />
+      <Route exact path={`${match.url}/:photoId`} component={AddEditPage} />
       <Route component={NotFound} />
     </Switch>
   );
